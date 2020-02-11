@@ -12,8 +12,8 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //routes
-require("./routes/api-routes.js")(app);
-require("./routes/html-routes.js")(app);
+require("./routes/api_routes")(app);
+require("./routes/html_routes")(app);
 
 //start listening after db is working
 db.sequelize.sync({ force:true }).then(function(){
