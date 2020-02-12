@@ -10,12 +10,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //set up handlebars
+//TODO NOT WORKING
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 //static directory
 app.use(express.static("public"));
-// TRIED app.use(express.static(`${__dirname}/public`));
 
 //routes
 require("./routes/api_routes")(app);

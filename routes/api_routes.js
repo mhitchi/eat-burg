@@ -1,9 +1,7 @@
-// TRIED const db = require("../models/burger");
 const db = require("../models");
 
 module.exports = function(app) {
   //GET route for getting all burgs
-  // TRIED commenting out. Seems like this isnt the problem.
   app.get("/", function(req,res) {
     db.burger.findAll({}).then(function(results) {
       
