@@ -13,7 +13,3 @@ CREATE TABLE burgers (
   devoured BOOLEAN DEFAULT (false),
   PRIMARY KEY (id)
 );
-
--- Creates new rows containing data in all named columns --
-INSERT INTO burgers (name, has_pet, pet_name, pet_age)
-VALUES ("Ahmed", TRUE, "Rockington", 100);
