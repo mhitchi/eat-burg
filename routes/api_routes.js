@@ -5,8 +5,8 @@ module.exports = function(app) {
   app.get("/", function(req,res) {
     db.burger.findAll({}).then(function(results) {
       
-      // TODO create array of burger objects??
-      res.json(results);
+      //sending index.handlebars
+      res.render("index");
     });
   });
 
