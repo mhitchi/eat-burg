@@ -15,7 +15,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 //static directory
-app.use(express.static("public"));
+app.use(express.static("public/assets"));
 
 //routes
 require("./routes/api_routes")(app);
