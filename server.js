@@ -23,7 +23,9 @@ require("./routes/html_routes")(app);
 
 
 //start listening after db is working
-db.sequelize.sync({ force:true }).then(function(){
+// TRIED db.sequelize.sync({ force: true}).then(function(){
+// TRIED db.sequelize.sync({ force: false, alter : true }).then(function(){
+db.sequelize.sync({ force: false }).then(function(){
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
