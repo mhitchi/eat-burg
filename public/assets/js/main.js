@@ -8,11 +8,17 @@ console.log("getting jquery");
 
 //get elements from DOM
 const $devourBtn = $(".devour");
+const $input = $("#burg-input");
+const $addBtn = $("#add");
 
 
 $devourBtn.on('click', function() {
-  console.log("clicking devour");
-  // TRIED const id = $(this).data("id");
   const id = this.id
   console.log(id);
+  // put request
+});
+
+$addBtn.on('click', function() {
+  const newBurg = $input.val();
+  console.log(newBurg);
 });

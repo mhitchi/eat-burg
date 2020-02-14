@@ -6,26 +6,34 @@
           {{!-- iterated through array of burgers --}}
           {{!-- TODO get array from api-routes? --}}
           {{#each burgers}}
-          <li>
-            <p>
-              {{this.burger_name}}
-            </p>
-            <button class="devour" id="{{this.id}}">DEVOUR</button>
-          </li>
+            {{#unless devoured}}
+              <li>
+                <p>
+                  {{this.burger_name}}
+                </p>
+                <button class="devour" id="{{this.id}}">DEVOUR</button>
+              </li>
+            {{/unless}}
           {{/each}}
         </ul>
       </div>
       <div class="col-md-6">
         <ul class="list-group eaten-list">
-          <li>
-            <p>
-              Hello?
-            </p>
-          </li>
+          {{#each burgers}}
+            {{#if devoured}}
+              <li>
+                <p>
+                  {{this.burger_name}}
+                </p>
+              </li>
+            {{/if}}
+          {{/each}}
         </ul>
       </div>
     </div>
     <div class="row">
       {{!-- input for new burg --}}
+      <input type="text" id="burg-input" placeholder="Enter a burger here">
+      <button id="add">ADD</button>
     </div>
   </div>
