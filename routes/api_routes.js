@@ -23,7 +23,16 @@ module.exports = function(app) {
   });
 
   //PUT route for updating burgs to eaten
-  app.put("/api/burgers", function(req,res) {
-    
+  // TRIED app.put("/api/burgers", function(req,res)
+  // TRIED app.put("/api/burgers/:burg?", function(req,res)
+  app.put("/api/burgers/devour", function(req,res) {
+    console.log("app.put working");
+    //TODO NOT WORKING
+    db.Burger.update(
+      {devoured: true},
+      {where: { id: burg }}
+    ).then(function(rowsUpdated){
+      res.json(rowsUpdated);
+    });
   });
 }
