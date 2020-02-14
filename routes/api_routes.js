@@ -6,7 +6,9 @@ module.exports = function(app) {
     db.Burger.findAll({}).then(function(results) {
       
       //sending index.handlebars
-      res.render("index");
+      //results passed as obj
+      res.render("index", { burgers:results });
+      console.log(results);
     });
   });
 

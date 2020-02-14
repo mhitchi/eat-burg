@@ -8,8 +8,8 @@ USE burgers_db;
 
 -- Creates the table "burgers" within burgers_db --
 CREATE TABLE burgers (
-  id INTEGER AUTO_INCREMENT,
+  -- id INTEGER AUTO_INCREMENT,
   burger_name VARCHAR(30),
   devoured BOOLEAN DEFAULT (false),
-  PRIMARY KEY (id)
+  -- PRIMARY KEY (id)
 );
