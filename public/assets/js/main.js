@@ -21,4 +21,15 @@ $devourBtn.on('click', function() {
 $addBtn.on('click', function() {
   const newBurg = $input.val();
   console.log(newBurg);
+  //TODO NOT WORKING
+  $.ajax({
+    url: 'http://localhost:8080/api/burgers',
+    method: 'POST',
+    data: 
+    {
+      burger_name: newBurg
+    }
+  }).then(function(response) {
+    console.log(response)
+  });
 });
